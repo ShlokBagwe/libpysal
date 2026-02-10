@@ -37,9 +37,16 @@ extensions = [  #'sphinx_gallery.gen_gallery',
     "numpydoc",
     #'sphinx.ext.napoleon',
     "matplotlib.sphinxext.plot_directive",
+    "myst_parser",
     "nbsphinx",
 ]
 bibtex_bibfiles = ["_static/references.bib"]
+
+# Enable MyST extensions for enhanced Markdown support
+myst_enable_extensions = [
+    "colon_fence",
+    "deflist",
+]
 
 # sphinx_gallery_conf = {
 #      # path to your examples scripts
@@ -57,7 +64,10 @@ templates_path = ["_templates"]
 # You can specify multiple suffix as a list of string:
 #
 # source_suffix = ['.rst', '.md']
-source_suffix = ".rst"
+source_suffix = {
+    ".rst": "restructuredtext",
+    ".md": "markdown",
+}
 
 # The master toctree document.
 master_doc = "index"
